@@ -31,7 +31,6 @@ public class CardDelivery {
         $("[data-test-id='phone'] input").setValue("+79211234567");
         $("[data-test-id='agreement']").click();
         $$("button").find(exactText("Забронировать")).click();
-        $(".notification__content").shouldBe(visible).shouldHave(exactText("Встреча успешно забронирована на " + date));
-//        $(withText("Встреча успешно забронирована на " + date)).shouldBe(visible, Duration.ofSeconds(15));
+        $(".notification__content").shouldBe(visible, Duration.ofSeconds(15)).shouldHave(exactText("Встреча успешно забронирована на " + date));
     }
 }
